@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>THE SEVEN FINGER OFFICIAL</title>
+  <base href="/" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+  
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.min.css">
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js"></script>
+
+
+
+  <style>
+  body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #777;
+  }
+  h3, h4 {
+      margin: 10px 0 30px 0;
+      letter-spacing: 10px;      
+      font-size: 20px;
+      color: #111;
+  }
+  .contain {
+      padding: 50px 40px;
+  }
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 60%;
+      height: 60%;
+      opacity: 0.9;
+  }
+  .person:hover {
+      border-color: #fff;
+
+  }
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      max-height: 650px !important;
+      margin: auto;
+  }
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+      background: #f4f4f4;
+  }
+  
+  .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+  }
+  .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+  .modal-header, h4, .close {
+      background-color: #333;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 40px 50px;
+  }
+  .nav-tabs li a {
+      color: #777;
+  }
+ 
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #fff;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+      
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #000 !important;
+  }
+  .navbar .navbar-brand{
+    padding: 0px !important;
+  
+  }
+  .navbar-nav li a:hover {
+      color: red !important;
+  }
+  .navbar-nav li.active a {
+      color: #000 !important;
+    
+      
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+
+  .act{
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  	background-color: #fff;
+  	padding:25px;
+  	margin-bottom: 40px;
+
+  }
+  .vid{
+  	padding:25px;
+  }
+   .banner{
+  	width: 80%;
+  	height: 80%;
+  }
+  .icon-act{
+  	width: 30%;
+  	height: 30%;
+  }
+  
+ 
+ 
+  footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }  
+  .form-control {
+      border-radius: 0;
+  }
+
+  
+  .card{
+  	
+  	
+  	margin-top:10px;
+  	margin-left: 25px;
+  	margin-right: 25px;
+  	padding:15px;
+  	vertical-align: middle;
+
+  }
+
+  .team{
+  	margin-bottom: 50px;
+  }
+
+  
+  textarea {
+      resize: none;
+  }
+
+  /*slode*/
+  .cont{
+    margin: 20px;
+   
+}
+.slode {
+    width: auto;
+    margin: 10px 30px 50px;
+    
+}
+.jdl{
+    letter-spacing: 4px;      
+      font-size: 15px;
+      color: rgb(32, 32, 32);
+      vertical-align: middle;
+      line-height: 20px;
+}
+.slick-slide {
+    background:  rgb(228, 227, 227);
+    height: 150px;
+    font: 400 15px/1.8 Lato, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    
+}
+
+.slick-prev:before, 
+.slick-next:before {
+    color: black;    
+}
+
+.slick-dots {
+    bottom: -30px;
+
+}
+
+.slick-center {
+ color:#000;
+
+}
+
+
+
+
+#sampul {
+		background-size: cover;
+		position:relative;
+		height: 150px;
+
+	}
+	.profil{
+		position:absolute; 
+		bottom:10px; right:20px;
+		width: 50px;
+		height: 50px;
+
+	}
+
+    .le{
+        color:#fff !important;
+    }
+
+	
+  
+  </style>
+</head>
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img class="navbar-brand" src="https://cdn.discordapp.com/attachments/418792363738005504/421014484476493825/LOGO__SEVEN__FINGERS__HORYZONTAL_LOGOTYPE.png">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#video">CONTENT</a></li>
+        <li><a href="#team">TEAM</a></li>
+        <li><a href="#activity">ACTIVITY</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">LOGIN</a>
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="https://cdn.discordapp.com/attachments/418792363738005504/426419292473524236/web-banner-sf02.png" alt="New York" width="1200" height="700">
+        <div class="carousel-caption">
+          
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5dsoN8CWjY9e1FbbuC2rVzQ6axZCJo_1680x8400" alt="Chicago" width="1200" height="700">
+        <div class="carousel-caption">
+         
+        </div>      
+      </div>
+    
+      <div class="item">
+        <img src="https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5du6LyBE1mqaaCgcg1fq2BmmLVbQ8S_1680x8400" alt="Los Angeles" width="1200" height="700">
+        <div class="carousel-caption">
+         
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- ABOUT -->
+<div id="video" class="container contain text-center">
+  <h3>SEVEN FINGERS CONTENTS</h3>
+  <div class="slode">
+        <div class="cont cont-0"></div>
+        <div class="cont cont-1"></div>
+        <div class="cont cont-2"></div>
+        <div class="cont cont-3"></div>
+        <div class="cont cont-4"></div>
+        <div class="cont cont-5"></div>
+        <div class="cont cont-6"></div>
+      </div>
+      <br>
+      <center><a href="https://www.sevenfingers.io/content"  class="btn">MORE CONTENTS ---></a></center>
+  
+</div>
+
+<!-- THE TEAM -->
+<div id="team" class="bg-1">
+	<div class="container contain">
+		<h3 class="text-center">SEVEN FINGERS TEAMS</h3>
+		<div class="row">
+			<div  class="col-sm-4">
+				<div class="team text-center">
+					<h3>Founder</h3>
+					<hr>
+					<div class="card" id="team-0">
+						
+					</div>
+				</div>
+			</div>
+			<div  class="col-sm-4">
+				<div class="team text-center">
+					<h3>Leader Team</h3>
+					<hr>
+					<div class="card" id="team-1"></div>
+					<div class="card" id="team-2"></div>
+					<div class="card" id="team-3"></div>
+			</div>
+		</div>
+			<div  class="col-sm-4">
+				<div class="team text-center">
+					<h3>Dev Team</h3>
+					<hr>
+					<div class="card" id="team-4"></div>
+          <div class="card" id="team-5"></div>
+          <div class="card" id="team-6"></div>
+				</div>
+			</div>
+		</div>
+       
+    
+	</div>
+</div>
+
+
+<!-- ACTIVITY -->
+<div id="activity">
+	<div class="container contain">
+		<h3 class="text-center">OUR ACTIVITY</h3>
+		<div class="row">
+		
+			<div class="col-sm-4">
+                <div class="act text-center">
+                	<img src="https://image.flaticon.com/icons/png/512/262/262831.png" class="img-circle icon-act center-block">
+                	<br>
+                	<p class="text-center"><strong>SF CONTEST</strong><br> A contest organized by SevenFingers, any contest of interest to the race and reward STEEM/SBD for every winner. Interesting contests are always there for you</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+               <div class="act text-center">
+                	<img src="http://de.alemani.de/wp-content/uploads/2017/02/Logo.png" class="img-circle icon-act center-block">
+                	<br>
+                	<p class="text-center"><strong>SF ACTIVITY</strong><br> A regular activity every week. this activity is a competition to spur the spirit of all members of SevenFingers. and each member can earn rewards every week</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="act text-center">
+                	<img src="https://lh3.googleusercontent.com/na5FoVO3yk7djLaUa6dTbrLiSyQGCFbUnrlPQKFgktH0dxJoRmaKVahom41J2-ur8B8" class="img-circle icon-act center-block">
+                	<br>
+                	<p class="text-center"><strong>SF GUIDE</strong><br> It is an activity organized by the SevenFingers team once a week by doing a voice group on the discord. discuss anything interesting to discuss.</p>
+                </div>
+            </div>
+				
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Footer -->
+<footer>
+   <div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3 class="le">Relations</h3>
+                <ul>
+                    <li>EOS.Cafe</li>
+                    <li>Adsactly</li>
+                    <li>SteemitBC</li>
+                    <li>VO.TU</li>
+                </ul>
+        </div>
+        <div class="col-sm-6">
+            <h3 class="le">Supporters</h3>
+            <ul>
+                <li>@ paulag</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</footer>
+
+
+<script>
+   
+$(function() { 
+    slide();
+    getTeam();
+
+    $('.slode').slick({
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 3,
+    centerMode: true,
+    centerPadding: '60px',
+    dots: true,
+    responsive: [{ 
+        breakpoint: 700, 
+        settings: { slidesToShow: 1,   centerMode: false,  dots: false
+        },
+    }]
+  });
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#home']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+
+
+    //get team name
+function getTeam(){
+    const team = ['arie.steem', 'coretan','podanrj','my451r','team2dev' , 'naufal'];
+    steem.api.getAccounts(team, function(err, result) {
+    var i;
+    for(i=0;i<team.length;i++){
+        var founder=result[i];
+        eval('var obj='+founder.json_metadata);
+        var tampil="<a target='blank' href='https://steemit.com/@"+founder['name']+"'><img src='"+obj.profile["profile_image"]+"' class='img-circle icon-act'></a><strong>&nbsp;&nbsp;&nbsp;&nbsp;"+founder['name']+"</strong>"
+        $("#team-"+i+"").append(tampil);
+            }
+    });
+}
+
+ function slide(){
+    var query = {limit: 7,start_author: 'sevenfingers'};
+steem.api.getDiscussionsByComments(query, function(err, result) {
+    const map1 = result.map(x => x.parent_author)
+    const map2 = result.map(x => x.parent_permlink)
+    steem.api.getContent(map1[0],map2[0], function(err, result){
+        eval('var obj='+result.json_metadata);
+        let template='<a href="https://www.sevenfingers.io/content/"><div  id="sampul" style="background-image:url('+obj.image[0]+')"><img class="img-circle profil img-thumbnail" src="http://img.busy.org/@'+result.author+'"> </div></a>'
+            $(".cont-0").append(template)
+        });
+      steem.api.getContent(map1[1],map2[1], function(err, result){
+        eval('var obj='+result.json_metadata);
+        let template='<a href="https://www.sevenfingers.io/content/"><div  id="sampul" style="background-image:url('+obj.image[0]+')"><img class="img-circle profil img-thumbnail" src="http://img.busy.org/@'+result.author+'"> </div></a>'
+            $(".cont-1").append(template)
+        });
+
+        steem.api.getContent(map1[2],map2[2], function(err, result){
+            eval('var obj='+result.json_metadata);
+        let template='<a href="https://www.sevenfingers.io/content/"><div id="sampul" style="background-image:url('+obj.image[0]+')"><img class="img-circle profil img-thumbnail" src="http://img.busy.org/@'+result.author+'"> </div></a>'
+            $(".cont-2").append(template)
+        });
+
+        steem.api.getContent(map1[3],map2[3], function(err, result){
+            eval('var obj='+result.json_metadata);
+        let template='<a href="https://www.sevenfingers.io/content/"><div id="sampul" style="background-image:url('+obj.image[0]+')"><img class="img-circle profil img-thumbnail" src="http://img.busy.org/@'+result.author+'"> </div></a>'
+            $(".cont-3").append(template)
+        });
+    
+        steem.api.getContent(map1[4],map2[4], function(err, result){
+            eval('var obj='+result.json_metadata);
+        let template='<a href="https://www.sevenfingers.io/content/"><div id="sampul" style="background-image:url('+obj.image[0]+')"><img class="img-circle profil img-thumbnail" src="http://img.busy.org/@'+result.author+'"> </div></a>'
+            $(".cont-4").append(template)
+        });
+
+        steem.api.getContent(map1[5],map2[5], function(err, result){
+            eval('var obj='+result.json_metadata);
+        let template='<a href="https://www.sevenfingers.io/content/"><div id="sampul" style="background-image:url('+obj.image[0]+')"><img class="img-circle profil img-thumbnail" src="http://img.busy.org/@'+result.author+'"> </div></a>'
+            $(".cont-5").append(template)
+        });
+        steem.api.getContent(map1[6],map2[6], function(err, result){
+            eval('var obj='+result.json_metadata);
+        let template='<a href="https://www.sevenfingers.io/content/"><div id="sampul" style="background-image:url('+obj.image[0]+')"><img class="img-circle profil img-thumbnail" src="http://img.busy.org/@'+result.author+'"> </div></a>'
+            $(".cont-6").append(template)
+        });  
+       
+});
+ }
+
+
+
+
+  
+       
+    
+
+   
+
+});
+</script>
+
+</body>
+</html>

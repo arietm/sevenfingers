@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SevenFingers Contents</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+
+  <style>
+       body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #777;
+       background: #f4f4f4;
+  }
+div.jumbotron {
+  background-image: url(https://media.discordapp.net/attachments/380062959176646658/382628779396169731/cover.png);
+  background-position: 0% 55%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color : #fff;
+}
+h1{
+   
+      letter-spacing: 20px; 
+}
+.gambar{ 
+  padding: 0;
+}
+.gambar img{
+  height: 150px;
+  width: 100%;
+}
+.judul{
+  height: 120px;
+  padding: 10px;
+  background: #fff;
+}
+
+
+.content{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 0;
+}
+
+.col-sm-4{
+  padding: 20px;
+}
+
+.judul img{
+  width: 40px;
+  height: 40px;
+
+}
+
+.username{
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+.title{
+  color:#000;
+}
+.attribut{
+   border-top:1px ridge ;
+   padding: 10px;
+   height: 40px;
+}
+
+.footer{
+  background: #fff;
+  border-top:1px ridge ;
+  padding:10px;
+  box-shadow: 8px 4px 8px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 40px;
+}
+
+.nav-tabs li a {
+      color: #777;
+  }
+ 
+  #atas {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #fff;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+      
+  }
+  #atas li a, #atas .navbar-brand { 
+      color: #000 !important;
+  }
+  #atas .navbar-brand{
+    padding: 0px !important;
+    padding-left: 10px !important;
+  }
+  #ule li a:hover {
+      color: red !important;
+  }
+  #ule li.active a {
+      color: #000 !important;
+      
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+ 
+
+
+  .nav.navbar-nav {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  @media (min-width: 768px) {
+    .navbar-nav {
+      float: none;
+    }
+  }
+
+  .navbar .nav.navbar-nav li a {
+    font-family: Montserrat, sans-serif;
+    font-size: 15px !important;
+    letter-spacing: 3px;
+	  color:#000;
+}
+.navbar .nav.navbar-nav li .active a{
+ color: red;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" id="atas">
+    <div class="container">
+      <div class="navbar-header">
+              <a href="https://www.sevenfingers.io/"><img class="navbar-brand" src="https://cdn.discordapp.com/attachments/418792363738005504/421014484476493825/LOGO__SEVEN__FINGERS__HORYZONTAL_LOGOTYPE.png"></a>
+      </div>
+    
+    
+    </div>
+  </nav>
+<div class="jumbotron text-center">
+  <h1>CONTENTS</h1>      
+  <p>Selected Contents by @sevenfingers</p>
+</div>
+<div class="navbar">
+    <ul class="nav navbar-nav" >
+        <li><a class="nav__link" href="#all" data-filter="Congratulation" >All</a></li>
+        <li><a class="nav__link" href="#blog" data-filter="Blog" >Blog</a></li>
+        <li><a class="nav__link" href="#video" data-filter="Video" >Video</a></li>
+        <li><a class="nav__link" href="#photography" data-filter="Photography">Photography</a></li>
+        <li><a class="nav__link" href="#Art" data-filter="Art">Art</a></li>
+      </ul>
+</div>
+<div class="container">
+
+  
+
+
+  <div class="row" id="display"> 
+  </div>  
+
+</div>
+
+
+
+
+       <script>
+var filter="Congratulation";
+getData();
+$('.nav__link').on('click', (e) => {
+  filter = $(e.currentTarget).data('filter');
+  $("#display").empty(); 
+  getData();
+});
+
+function getData(){
+  var query = {limit: 100,start_author: 'sevenfingers'};
+       steem.api.getDiscussionsByComments(query, function(err, result) {
+      for(i=0;i<result.length;i++){
+        if(result[i].body.indexOf(filter)> -1){
+          var author=result[i].parent_author;
+          var link=result[i].parent_permlink;
+          steem.api.getContent(author,link , function(err, hase) {
+            console.log(hase);
+             eval('var obj='+hase.json_metadata);
+             if(hase.total_payout_value==="0.000 SBD"){
+               var uang=hase.pending_payout_value;
+             }
+             else{
+               var uang=hase.total_payout_value;
+             }
+            var display='<div class="col-sm-4"><div class="content"> <div class="gambar"><img src="'+obj.image[0]+'"></div><div class="judul"><img class="img-circle img-thumbnail" src="http://img.busy.org/@'+hase.author+'"><span class="username">&nbsp;&nbsp;'+hase.author+'</span><h4 class="title"><a href="https://steemit.com'+hase.url+'" target="blank" style="text-decoration: none; color:#777">'+hase.root_title+'</a></h4></div><div class="attribut"><span class="pull-right">'+uang+'</span><span class="pull-right">'+hase.active_votes.length+'  <a class="glyphicon glyphicon-thumbs-up"></a>&nbsp;&nbsp; </span></div></div></div>'
+             $("#display").append(display); 
+             
+              });
+        }
+      }
+     
+      });
+}
+
+       
+     
+      </script>
+
+</body>
+</html>
